@@ -1,28 +1,21 @@
 //Save the buttons as constants
-const guessButton = document.querySelector("#guessButton")
+//Input
+const inputField = document.querySelector("#user-guess");
+
+//Buttons
+const guessButton = document.querySelector("#guess-button");
+
 //Add an eventListener that takes input from the input field
-const inputfield = document.querySelector("#userGuess")
-const text = document.querySelector("p")
-const reset = document.querySelector("#reset")
+guessButton.addEventListener("click", ()=>{
+    console.log(inputField.value);
+});
 
 
 //Print something to the console
-guessButton.addEventListener("click",() => {
-    let guessvalue = Number(inputfield.value)
-    console.log("click")
-    if (guessvalue === randomNumber) {text.innerText =("right")}
-    if (guessvalue > randomNumber) {text.innerText =("it should be higher")}
-    if(guessvalue < randomNumber) {text.innerText =("it should be lower")}
-})
-reset.addEventListener("click",() => {
-    randomNumber = generateNumber();
-    console.log(randomNumber)
-})
-
 
 //Make a random number between 1-5
 let randomNumber = generateNumber();
-console.log(randomNumber);
+console.log(`The random number is ${randomNumber}`);
 
 //Returns a random number between 1-5
 function generateNumber(){
